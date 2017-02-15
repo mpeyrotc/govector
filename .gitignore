@@ -90,6 +90,7 @@ ENV/
 
 #mac os
 .DS_Store
+.idea/
 
 #security
 config.ini

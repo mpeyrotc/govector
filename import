@@ -1,0 +1,17 @@
+Script started on Tue Feb 14 20:20:39 2017
+command: ./fix_brew_python.py
+./fix_brew_python.py: line 1: import: command not found
+./fix_brew_python.py: line 2: sys.path: command not found
+./fix_brew_python.py: line 4: new_path: command not found
+./fix_brew_python.py: line 5: /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7,: No such file or directory
+./fix_brew_python.py: line 6: /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-darwin,: No such file or directory
+./fix_brew_python.py: line 7: /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac,: No such file or directory
+./fix_brew_python.py: line 8: /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac/lib-scriptpackages,: No such file or directory
+./fix_brew_python.py: line 9: /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python,: No such file or directory
+./fix_brew_python.py: line 10: /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk,: No such file or directory
+./fix_brew_python.py: line 11: /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-old,: No such file or directory
+./fix_brew_python.py: line 12: /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload]: No such file or directory
+./fix_brew_python.py: line 15: syntax error near unexpected token `if'
+./fix_brew_python.py: line 15: `    if p not in sys.path:'
+
+Script done on Tue Feb 14 20:20:39 2017

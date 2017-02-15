@@ -94,3 +94,4 @@ ENV/
 .idea/workspace.xml
 
 #security
+config.ini

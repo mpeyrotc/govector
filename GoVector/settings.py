@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'GoVector.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'condominios',
-        'USER': 'postgres',
-        'PASSWORD': 'rqtw6kar',
-        'HOST': '',
-        'PORT': '',
+        'NAME': 'dc7n1v708m0bdo',
+        'USER': 'fwbowdyxqgrsor',
+        'PASSWORD': '1bf7375200f8173907247fdc54adca03351a1abd1fb8c7d23d88a5fc26970664',
+        'HOST': 'ec2-54-235-90-107.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 

@@ -91,6 +91,7 @@ ENV/
 #mac os
 .DS_Store
 .idea/
+.idea/workspace.xml
 
 #security
 config.ini

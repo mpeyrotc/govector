@@ -1,10 +1,51 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Condominios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 </head>
 <body>
-<h1>Hello... friend!!! - turret</h1>
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            
+            <a href="#" class="navbar-brand">Cintermex</a>
+            
+            <button class="navbar-toggle" data-toggle = "collapse" data-target=".navHeaderCollapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse navHeaderCollpase">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Inicio</a></li>
+                    <li><a href="news.html">Avisos</a></li>
+                    <li class="dropdown">
+                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Condominios<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="permanent_business.html">Negocios Permanentes</a></li>
+                            <li><a href="disponibility.html">Especios Disponibles</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Informacion<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="general.html">Guia General</a></li>
+                            <li><a href="#">Especios Disponibles</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Miembros</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <h1>Hello... friend!!! - turret</h1>
 </body>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </html>

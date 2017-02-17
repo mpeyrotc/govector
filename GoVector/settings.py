@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', config.get('django', 'SecretKey
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['govector.herokuapp.com']
+ALLOWED_HOSTS = ['govector.herokuapp.com', 'localhost']
 
 
 # Application definition

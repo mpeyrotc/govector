@@ -1,10 +1,148 @@
+{% load static %
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>Condominios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <style type="text/css">
+<!--
+a:link {
+	color: #0099CC;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #0099CC;
+}
+a:hover {
+	text-decoration: none;
+	color: #0099CC;
+}
+a:active {
+	text-decoration: none;
+	color: #0099CC;
+}
+.style10 {
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.style12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #333333;
+}
+.style113 {font-family: Arial, Helvetica, sans-serif}
+-->
+    </style>
 
+    <script type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+    </script>
+</head>
+<body leftmargin="20" topmargin="20" rightmargin="20" bottommargin="20" onload="MM_preloadImages('http://www.cintermex.com/condominos/Imgs/Kit_r1_c1_f2.jpg','http://www.cintermex.com/condominos/Imgs/Kit_r5_c1_f2.jpg','http://www.cintermex.com/condominos/Imgs/Kit_r7_c1_f2.jpg','http://www.cintermex.com/condominos/Imgs/Kit_r3_c1_f2.jpg')">
+<div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+
+            <a href="#" class="navbar-brand">Cintermex</a>
+
+            <button class="navbar-toggle" data-toggle = "collapse" data-target=".navHeaderCollapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse navHeaderCollpase">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'news' %}">Avisos</a></li>
+                    <li class="dropdown">
+                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Condominios<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="permanent_business.html">Negocios Permanentes</a></li>
+                            <li><a href="disponibility.html">Especios Disponibles</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Informacion<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="general.html">Guia General</a></li>
+                            <li><a href="#">Especios Disponibles</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Miembros</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle" background="http://www.cintermex.com/Condominos/Imgs/Background.png" bgcolor="#DCDCDC"> <div align="center">
+    <span class="style10">G U &Iacute; A &nbsp;&nbsp;&nbsp; G E N E R A L </span></div></td>
+  </tr>
+</table>
+<br />
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="middle"><div align="justify" class="style12"><span class="style113">La siguiente gu&iacute;a consiste en un kit de informaci&oacute;n imprimible  &uacute;til para  ocupantes y clientes prospectos, para conocer m&aacute;s acerca de la log&iacute;stica de operaciones en el condominio. <br />
+(Necesita <a href="http://get.adobe.com/es/reader/" target="_blank"><strong>Adobe Acrobat Reader</strong></a>).</span>.</div></td>
+  </tr>
+</table>
+<br />
+<hr align="left" width="800" />
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle"><div align="center"><a href="http://www.cintermex.com/condominos/Directorio_Cintermex.pdf" target="mainFrame"><img src="http://www.cintermex.com/condominos/Imgs/Kit_r1_c1.jpg" name="Image1" width="650" height="70" border="0" id="Image1" onmouseover="MM_swapImage('Image1','','http://www.cintermex.com/condominos/Imgs/Kit_r1_c1_f2.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></div></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><img src="http://www.cintermex.com/condominos/Imgs/Kit_r2_c1.jpg" width="650" height="5" /></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><a href="http://www.cintermex.com/web/condominos/Directorio_Condominos.aspx" target="mainFrame"><img src="http://www.cintermex.com/condominos/Imgs/Kit_r3_c1.jpg" name="Image4" width="650" height="70" border="0" id="Image4" onmouseover="MM_swapImage('Image4','','http://www.cintermex.com/condominos/Imgs/Kit_r3_c1_f2.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><img src="http://www.cintermex.com/condominos/Imgs/Kit_r4_c1.jpg" width="650" height="5" /></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><a href="http://www.cintermex.com/condominos/Guia_de_servicios.pdf" target="mainFrame"><img src="http://www.cintermex.com/condominos/Imgs/Kit_r5_c1.jpg" name="Image2" width="650" height="70" border="0" id="Image2" onmouseover="MM_swapImage('Image2','','http://www.cintermex.com/condominos/Imgs/Kit_r5_c1_f2.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><img src="http://www.cintermex.com/condominos/Imgs/Kit_r6_c1.jpg" width="650" height="5" /></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><a href="http://www.cintermex.com/condominos/Reglamento_de_construccion.pdf" target="mainFrame"><img src="http://www.cintermex.com/condominos/Imgs/Kit_r7_c1.jpg" name="Image3" width="650" height="70" border="0" id="Image3" onmouseover="MM_swapImage('Image3','','http://www.cintermex.com/condominos/Imgs/Kit_r7_c1_f2.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 </body>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </html>

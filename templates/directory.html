@@ -1,10 +1,260 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Condominios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <style type="text/css">
+<!--
+a:link {
+	color: #0099CC;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #0099CC;
+}
+a:hover {
+	text-decoration: none;
+	color: #0099CC;
+}
+a:active {
+	text-decoration: none;
+	color: #0099CC;
+}
+.style10 {
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #333333;
+}
+.style12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+.style15 {color: #333333}
+.style23 {color: #333333; font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
+.style25 {color: #333333; font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; }
+.style30 {
+	color: #333333;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+}
+-->
+    </style>
 </head>
-<body>
+<body topmargin="20" leftmargin="20" rightmargin="20" bottommargin="20">
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
 
-</body>
+            <a href="#" class="navbar-brand">Cintermex</a>
+
+            <button class="navbar-toggle" data-toggle = "collapse" data-target=".navHeaderCollapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse navHeaderCollpase">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'news' %}">Avisos</a></li>
+                    <li class="dropdown">
+                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Condominios<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="permanent_business.html">Negocios Permanentes</a></li>
+                            <li><a href="disponibility.html">Especios Disponibles</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Informacion<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="general.html">Guia General</a></li>
+                            <li><a href="#">Especios Disponibles</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Miembros</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle" background="http://www.cintermex.com/Condominos/Imgs/Background.png" bgcolor="#DCDCDC"> <div align="center">
+    <span class="style10">D I R E C T O R I O </span></div></td>
+  </tr>
+</table>
+<br />
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="300" colspan="2" valign="middle"><div align="justify" class="style12">
+      <div align="left"><span class="style15"><strong>Tel&eacute;fono:&nbsp;</strong> + 01 52 (81) 8369 - 6969<br />
+          <strong>Fax:&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + 01 52 (81) 8369 - 6911</span></div>
+    </div></td>
+    <td width="10" align="center" valign="middle" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="200" rowspan="27" align="center" valign="top" bgcolor="#FFFFFF"><table width="200" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="20" bgcolor="#DDDDDD"><div align="center"><span class="style30">O T R O S</span></div></td>
+        </tr>
+      <tr>
+          <td><div align="center"><img src="http://www.cintermex.com/Condominos/Imgs/Email.jpg" width="112" height="119" /></div></td>
+        </tr>
+
+        <tr>
+          <td><div align="left">
+            <ul>
+              <li class="style12"><a href="mailto:direccion@cintermex.com" target="_blank">Direcci&oacute;n General</a></li>
+            </ul>
+          </div></td>
+        </tr>
+
+      <tr>
+          <td><div align="left">
+            <ul>
+              <li class="style12"><a href="mailto:convenciones@cintermex.com" target="_blank">Convenciones</a></li>
+            </ul>
+          </div></td>
+        </tr>
+
+      <tr>
+          <td><div align="left">
+            <ul>
+              <li class="style12"><a href="mailto:exposiciones@cintermex.com" target="_blank">Exposiciones</a></li>
+            </ul>
+          </div></td>
+        </tr>
+
+      <tr>
+          <td><div align="left">
+            <ul>
+              <li class="style12"><a href="mailto:info@cintermex.com" target="_blank">Comunicaci&oacute;n</a></li>
+            </ul>
+          </div></td>
+        </tr>
+
+      <tr>
+          <td><div align="left">
+            <ul>
+              <li class="style12"><a href="mailto:servicios@cintermex.com" target="_blank">M&oacute;dulo de Servicios</a></li>
+            </ul>
+          </div></td>
+        </tr>
+
+      <tr>
+          <td><div align="left">
+            <ul>
+              <li class="style12"><a href="mailto:telefonia@cintermex.com" target="_blank">Telecomunicaciones</a></li>
+            </ul>
+          </div></td>
+        </tr>
+
+      <tr>
+          <td><div align="left">
+            <ul>
+              <li class="style12"><a href="mailto:rhumanos@cintermex.com" target="_blank">Recursos Humanos</a></li>
+            </ul>
+          </div></td>
+        </tr>
+
+        </table></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle">&nbsp;</td>
+    <td align="center" valign="middle" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td colspan="2" valign="middle"><hr /></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle">&nbsp;</td>
+    <td valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td width="280" valign="middle" bgcolor="#DDDDDD"><span class="style25">Promoci&oacute;n de Cond&oacute;minos:</span></td>
+    <td width="290" valign="middle" bgcolor="#DDDDDD"><a href="mailto:condominos@cintermex.com" target="_blank" class="style23" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=condominos@cintermex.com&amp;cc=&amp;bcc=&amp;su=&amp;body=','_blank');return false;">condominos@cintermex.com</a></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle"><div align="justify"><span class="style23">Para dudas o comentarios acerca de cualquier servicio relacionado con la promoci&oacute;n, escrituraci&oacute;n, informaci&oacute;n o renta/venta de las oficinas.</span></div></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle">&nbsp;</td>
+    <td valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle"><hr /></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle">&nbsp;</td>
+    <td valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="280" valign="middle" bgcolor="#DDDDDD"><span class="style25">Administraci&oacute;n:</span></td>
+    <td width="290" valign="middle" bgcolor="#DDDDDD"><span class="style23"><a href="mailto:administracion@cintermex.com" target="_blank" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=administracion@cintermex.com&amp;cc=&amp;bcc=&amp;su=&amp;body=','_blank');return false;">administracion@cintermex.com</a><a href="mailto:condominos@cintermex.com" class="style23" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=condominos@cintermex.com&amp;cc=&amp;bcc=&amp;su=&amp;body=','_blank');return false;"></a></span></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle"><div align="justify"><span class="style23">Para dudas o comentarios acerca de cualquier servicio relacionado con la administraci&oacute;n, tarifas, facturaci&oacute;n, tesorer&iacute;a o cobranza.</span></div></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle">&nbsp;</td>
+    <td valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle"><hr /></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle">&nbsp;</td>
+    <td valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="280" valign="middle" bgcolor="#DDDDDD"><span class="style25">Mantenimiento:</span></td>
+    <td width="290" valign="middle" bgcolor="#DDDDDD"><a href="mailto:mantenimiento@cintermex.com" target="_blank" class="style23" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=mantenimiento@cintermex.com&amp;cc=&amp;bcc=&amp;su=&amp;body=','_blank');return false;">mantenimiento@cintermex.com</a></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle"><div align="justify"><span class="style12">Para dudas o comentarios acerca de cualquier servicio de ingenier&iacute;a y mantenimiento del local (aire acondicionado, agua potable, electricidad, instalaciones, etc.).</span></div></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle">&nbsp;</td>
+    <td valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle"><hr /></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle">&nbsp;</td>
+    <td valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="280" valign="middle" bgcolor="#DDDDDD"><span class="style25">Operaciones:</span></td>
+    <td width="290" valign="middle" bgcolor="#DDDDDD"><span class="style23"><a href="mailto:operaciones@cintermex.com" target="_blank" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=operaciones@cintermex.com&amp;cc=&amp;bcc=&amp;su=&amp;body=','_blank');return false;">operaciones@cintermex.com</a><a href="mailto:mantenimiento@cintermex.com" target="_blank" class="style23" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=mantenimiento@cintermex.com&amp;cc=&amp;bcc=&amp;su=&amp;body=','_blank');return false;"></a></span></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle"><div align="justify" class="style23">Para dudas o comentarios acerca de cualquier servicio de central de operaciones, limpieza, seguridad o estacionamiento.</div></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="middle">&nbsp;</td>
+    <td width="10" valign="top" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+</table>
+<br />
+</body >
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </html>

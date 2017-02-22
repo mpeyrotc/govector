@@ -6,19 +6,19 @@
 
 {% block content %}
     <!-- Section 1 -->
-    <div id="about_us" style="height: 1000px; background-color: lightblue;">
+    <div id="{% url 'about_us' %}about_us" style="height: 1000px; background-color: lightblue;">
       <h1>Nosotros</h1>
       <p>Try to scroll this page and look at the navigation bar while scrolling!</p>
     </div>
 
     <!-- Section 2 -->
-    <div id="location" style="height: 1000px; background-color: lightgreen;">
+    <div id="{% url 'about_us' %}location" style="height: 1000px; background-color: lightgreen;">
       <h1>Ubicación</h1>
       <p>Try to scroll this page and look at the navigation bar while scrolling!</p>
     </div>
 
     <!-- Section 3 -->
-    <div id="directory" style="height: 1000px; background-color: lightpink;">
+    <div id="{% url 'about_us' %}directory" style="height: 1000px; background-color: lightpink;">
       <h1>Directorio</h1>
       <p>Try to scroll this page and look at the navigation bar while scrolling!</p>
     </div>

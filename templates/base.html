@@ -15,7 +15,7 @@
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
     {% block nav_bar %}
-    <div class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar navbar-inverse">
         <div class="container">
 
             <a href="#" class="navbar-brand">Cintermex</a>
@@ -47,9 +47,9 @@
                     <li class="dropdown">
                         <a href = "{% url 'about_us' %}" class="dropdown-toggle" data-toggle="dropdown">Nosotros<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{% url 'about_us' %}/#about_us">Quiénes somos</a></li>
-                            <li><a href="{% url 'about_us' %}/#location">Ubicación</a></li>
-                            <li><a href="{% url 'about_us' %}/#directory">Directorio</a></li>
+                            <li><a href="{% url 'about_us' %}#about_us">Quiénes somos</a></li>
+                            <li><a href="{% url 'about_us' %}#location">Ubicación</a></li>
+                            <li><a href="{% url 'about_us' %}#directory">Directorio</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Miembros</a></li>

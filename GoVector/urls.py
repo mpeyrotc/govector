@@ -34,7 +34,5 @@ urlpatterns = [
     url(r'^informacion/instalaciones-y-servicios/elevators$', condominios.views.elevators, name='elevators'),
     url(r'^informacion/instalaciones-y-servicios/locals$', condominios.views.locals, name='locals'),
     url(r'^nosotros/$', condominios.views.about_us, name='about_us'),
-    url(r'^nosotros/quienes-somos$', condominios.views.about_us, name='about_us'),
-    url(r'^nosotros/directorio$', condominios.views.directory, name='directory'),
     url(r'^nosotros/contacto$', condominios.views.contact, name='contact'),
 ]

@@ -64,7 +64,7 @@ def locals(request):
 
 def about_us(request):
     context = {}
-    return render(request, "instalations.html", context)
+    return render(request, "about_us.html", context)
 
 
 def directory(request):

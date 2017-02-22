@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Condominos{% endblock %}</title>
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
     {% block nav_bar %}
     <div class="navbar navbar-inverse navbar-static-top">
         <div class="container">
@@ -44,7 +44,14 @@
                             <li><a href="#">Especios Disponibles</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Nosotros</a></li>
+                    <li class="dropdown">
+                        <a href = "{% url 'about_us' %}" class="dropdown-toggle" data-toggle="dropdown">Nosotros<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#about_us">Quiénes somos</a></li>
+                            <li><a href="#location">Ubicación</a></li>
+                            <li><a href="#directory">Directorio</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Miembros</a></li>
                 </ul>
             </div>

@@ -27,6 +27,8 @@
 
 .site-container {
     margin-top: 50px;
+    padding-top: 10px;
+    text-align: justify;
 }
 
 blockquote.style2 {

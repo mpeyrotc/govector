@@ -68,7 +68,7 @@ def locals(request):
 def about_us(request):
     context = {}
 
-    file_path = os.path.join(module_dir, 'static/files/directory.json')
+    file_path = os.path.join(module_dir, '../condominios/static/files/directory.json')
     data = open(file_path).read()
     directory_data = json.loads(data)
 

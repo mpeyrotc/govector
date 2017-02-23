@@ -1,62 +1,92 @@
 {% extends "base.html" %}
 
 {% block title %}
-  Nosotros
+    Nosotros
+{% endblock %}
+
+{% block css %}
+    {% load static %}
+    <link href='{% static 'css/about_us.css' %}' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block content %}
-    <div class="site-container">
+    <div class="mainsite-container">
         <!-- Section 1 -->
-        <div id="about_us" style="background-color: lightblue;">
-          <h1>Quiénes somos</h1>
-          <p>El&nbsp;<strong>Condominio Cintermex</strong>&nbsp;cuenta con aproximadamente 12,000 metros cuadrados
-              teni&eacute;ndose m&aacute;s de 150 organizaciones distribuidas en dos niveles.&nbsp;<br/><br/>
-              El recinto fue inaugurado el 25 de Abril de 1991 como un edificio inteligente, donde todos los
-              sistemas estuvieran totalmente automatizados: seguridad, aire acondicionado, iluminaci&oacute;n,
-              protecci&oacute;n contra incendios, circuito cerrado de televisi&oacute;n, etc.</p>
+        <div id="about_us" class="navigation_section"></div>
+        <div>
+            <h1 class="section_title">Quiénes somos</h1>
+            <p>El&nbsp;<strong>Condominio Cintermex</strong>&nbsp;cuenta con aproximadamente 12,000 metros cuadrados
+                teni&eacute;ndose m&aacute;s de 150 organizaciones distribuidas en dos niveles.&nbsp;<br/><br/>
+                El recinto fue inaugurado el 25 de Abril de 1991 como un edificio inteligente, donde todos los
+                sistemas estuvieran totalmente automatizados: seguridad, aire acondicionado, iluminaci&oacute;n,
+                protecci&oacute;n contra incendios, circuito cerrado de televisi&oacute;n, etc.</p>
 
             <blockquote class="style2">
                 Le cumplimos Se&ntilde;or Presidente&hellip;<br/>
-                <span style="text-align: right"><strong><em> - Carlos Salazar</em></strong></span>
+                <span style="text-align: right;"><strong><em> - Carlos Salazar</em></strong></span>
             </blockquote>
 
             <p>&nbsp;<strong>Hechos relevantes:</strong></p>
 
             <ul>
-              <li>Promoci&oacute;n de los locales en la web, pantallas y pr&oacute;ximamente planos interactivos.</li>
-              <li>Instalaci&oacute;n de sem&aacute;foro para r&aacute;pido flujo en rampas de salida.</li>
-              <li>Fumigaci&oacute;n semanal en los locales.</li>
-              <li>Automatizaci&oacute;n del estacionamiento.</li>
-              <li>Construcci&oacute;n del Restaurante La Arcada 1200.</li>
+                <li>Promoci&oacute;n de los locales en la web, pantallas y pr&oacute;ximamente planos interactivos.</li>
+                <li>Instalaci&oacute;n de sem&aacute;foro para r&aacute;pido flujo en rampas de salida.</li>
+                <li>Fumigaci&oacute;n semanal en los locales.</li>
+                <li>Automatizaci&oacute;n del estacionamiento.</li>
+                <li>Construcci&oacute;n del Restaurante La Arcada 1200.</li>
             </ul>
         </div>
+    </div>
 
-        <!-- Section 2 -->
-        <div id="location" style="height: 1000px; background-color: lightgreen;">
-          <h1>Ubicación</h1>
-          <div align="center">
-              <div align="center">
-                  <iframe width="758" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                      src="https://maps.google.com.mx/maps/ms?msa=0&amp;msid=210059875164801364416.0004994837d8c0989ca8f&amp;ie=UTF8&amp;ll=25.677734,-100.288761&amp;spn=0,0&amp;iwloc=000499483b74d4c32bdff&amp;output=embed">
-                  </iframe>
-                  <br/>
-                  <br/>
-                  <small>Ver <a href="https://maps.google.com.mx/maps/ms?msa=0&amp;msid=210059875164801364416.0004994837d8c0989ca8f&amp;ie=UTF8&amp;ll=25.677734,-100.288761&amp;spn=0,0&amp;iwloc=000499483b74d4c32bdff&amp;source=embed"
-                            style="color:#0000FF;text-align:left">CINTERMEX</a> en un mapa ampliado
-                  </small>
-              </div>
-          </div>
+    <!-- Section 2 -->
+    <div id="location" class="navigation_section"></div>
+    <div class="long_section">
+        <div class="mainsite-container">
+            <div>
+                <h1 class="section_title map_address">Ubicación</h1>
+                <p class="map_address">Av. Fundidora No. 501 Col. Obrera, C.P. 64010, </br> Monterrey, Nuevo León, México</p>
+                <div align="center">
+                    <div align="center">
+                        <iframe width="758" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                                src="https://maps.google.com.mx/maps/ms?msa=0&amp;msid=210059875164801364416.0004994837d8c0989ca8f&amp;ie=UTF8&amp;ll=25.677734,-100.288761&amp;spn=0,0&amp;iwloc=000499483b74d4c32bdff&amp;output=embed">
+                        </iframe>
+                        <br/>
+                        <br/>
+                        <small class="map_address">Ver <a
+                                href="https://maps.google.com.mx/maps/ms?msa=0&amp;msid=210059875164801364416.0004994837d8c0989ca8f&amp;ie=UTF8&amp;ll=25.677734,-100.288761&amp;spn=0,0&amp;iwloc=000499483b74d4c32bdff&amp;source=embed"
+                                style="color:#0000FF;text-align:left">CINTERMEX</a> en un mapa ampliado
+                        </small>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <!-- Section 3 -->
-        <div id="directory" style="height: 1000px; background-color: lightpink;">
-          <h1>Directorio</h1>
-            <p>
-                <table>
-                    <tr>Teléfono:</td> <td>+ 01 52 (81) 8369 - 6969</td></tr>
-                    <tr><td>Fax:</td> <td>+ 01 52 (81) 8369 - 6911</td></tr>
-                </table>
-            </p>
-        </div>
+    <!-- Section 3 -->
+    <div id="directory" class="navigation_section"></div>
+    <div class="mainsite-container">
+    <div>
+        <h1 class="section_title">Directorio</h1>
+        <p>
+        <table>
+            <tr>
+                <td>Teléfono:</td>
+                <td> +01 52 (81) 8369 - 6969</td>
+            </tr>
+            <tr>
+                <td>Fax:</td>
+                <td> +01 52 (81) 8369 - 6911</td>
+            </tr>
+        </table>
+        </p>
+        <p style="padding-top: 10px">
+            {% for values in directory_data %}
+                <p style="padding-top: 20px"><b>{{ values.name }}</b>
+                    <span style="text-align: right; float: right"><a>{{ values.email }}</a></span></p>
+                <p>{{ values.content }}</p>
+            {% endfor %}
+        </p>
+    </div>
+    </div>
     </div>
 {% endblock %}

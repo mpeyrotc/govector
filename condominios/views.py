@@ -1,5 +1,8 @@
 from django.shortcuts import render
+import os
+import json
 
+module_dir = os.path.dirname(__file__)  # get current directory
 
 # Create your views here.
 def home(request):
@@ -64,6 +67,13 @@ def locals(request):
 
 def about_us(request):
     context = {}
+
+    file_path = os.path.join(module_dir, 'static/files/directory.json')
+    data = open(file_path).read()
+    directory_data = json.loads(data)
+
+    context["directory_data"] = directory_data
+
     return render(request, "about_us.html", context)
 
 

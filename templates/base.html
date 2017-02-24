@@ -6,16 +6,20 @@
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
     <!-- Bootstrap core CSS -->
-    <link href='{% static 'css/bootstrap.min.css' %}' rel='stylesheet' type='text/css'>
+    <link href='{% static 'css/bootstrap.css' %}' rel='stylesheet' type='text/css'>
+    <link href='{% static 'css/bootstrap-theme.css' %}' rel='stylesheet' type='text/css'>
+    <link href='{% static 'css/base.css' %}' rel='stylesheet' type='text/css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     {% block css %}{% endblock %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Condominos{% endblock %}</title>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body data-spy="scroll" data-target=".navbar-fixed-top" data-offset="50">
     {% block nav_bar %}
-    <div class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" id="site_navbar">
         <div class="container">
 
             <a href="#" class="navbar-brand">Cintermex</a>
@@ -47,9 +51,9 @@
                     <li class="dropdown">
                         <a href = "{% url 'about_us' %}" class="dropdown-toggle" data-toggle="dropdown">Nosotros<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#about_us">Quiénes somos</a></li>
-                            <li><a href="#location">Ubicación</a></li>
-                            <li><a href="#directory">Directorio</a></li>
+                            <li><a href="{% url 'about_us' %}#about_us" class="page-scroll">Quiénes somos</a></li>
+                            <li><a href="{% url 'about_us' %}#location" class="page-scroll">Ubicación</a></li>
+                            <li><a href="{% url 'about_us' %}#directory" class="page-scroll">Directorio</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Miembros</a></li>
@@ -61,11 +65,21 @@
 
     {% block content %} {% endblock %}
 
-    {% block lower_bar %}{% endblock %}
+    {% block lower_bar %}
+        <!-- Footer -->
+        <footer>
+            <div class="text-center site_footer">
+                <p>CAv. Fundidora No. 501 - Col. Obrera - Monterrey, N.L., México - C.P. 64010 - T. +52 (81) 8369 6969 -
+                    condominos@cintermex.com</p>
+            </div>
+        </footer>
+
+    {% endblock %}
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/site/base.js' %}"></script>
 </body>
 </html>

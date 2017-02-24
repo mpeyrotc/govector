@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Promoción de Condóminos",
+    "email": "condominos@cintermex.com",
+    "content": "Para dudas o comentarios acerca de cualquier servicio relacionado, con la promoción, escrituración, información o renta/venta de las oficinas."
+  },
+
+  {
+    "name": "Administración",
+    "email": "administracion@cintermex.com",
+    "content": "Para dudas o comentarios acerca de cualquier servicio relacionado con la administración, tarifas, facturación, tesorería o cobranza."
+  },
+
+  {
+    "name": "Mantenimiento",
+    "email": "mantenimiento@cintermex.com",
+    "content": "Para dudas o comentarios acerca de cualquier servicio de ingeniería y mantenimiento del local (aire acondicionado, agua potable, electricidad, instalaciones, etc.)."
+  },
+
+  {
+    "name": "Operaciones",
+    "email": "operaciones@cintermex.com",
+    "content": "Para dudas o comentarios acerca de cualquier servicio de central de operaciones, limpieza, seguridad o estacionamiento."
+  }
+]

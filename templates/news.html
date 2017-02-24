@@ -1,69 +1,55 @@
 {% extends "base.html" %}
+
 {% block title %}
   Avisos
 {% endblock %}
 
+{% block css %}
+    {% load static %}
+    <link href='{% static 'css/about_us.css' %}' rel='stylesheet' type='text/css'>
+{% endblock %}
+
 {% block content %}
-    <div class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
-
-            <a href="#" class="navbar-brand">Cintermex</a>
-
-            <button class="navbar-toggle" data-toggle = "collapse" data-target=".navHeaderCollapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <div class="collapse navbar-collapse navHeaderCollpase">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="{% url 'home' %}">Inicio</a></li>
-                    <li><a href="{% url 'news' %}">Avisos</a></li>
-                    <li class="dropdown">
-                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Condominios<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="permanent_business.html">Negocios Permanentes</a></li>
-                            <li><a href="disponibility.html">Especios Disponibles</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Informacion<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="general.html">Guia General</a></li>
-                            <li><a href="#">Especios Disponibles</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Miembros</a></li>
-                </ul>
-            </div>
+    <table width="800" border="0" cellpadding="0" cellspacing="0" align="center">
+        <div class="mainsite-container">
+            <div id="about_us" class="navigation_section"></div>
+                <div>
+                    <h1 class="section_title">Avisos</h1>
+                </div>
         </div>
-    </div>
-<table width="800" border="0" cellpadding="0" cellspacing="0">
-    <tr>
-        <td align="center" valign="middle" background="http://www.cintermex.com/Condominos/Imgs/Background.png" bgcolor="#DCDCDC"> <div align="center">
-    <span class="style10">A V I S O S </span></div></td>
-    </tr>
-</table>
-<br />
-<p class="style11">Estacionamiento</p>
-<table width="800" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td valign="top"><div align="justify"><span class="style7">Les recordamos que la fecha límite para hacer el pago de estacionamiento es el <strong>JUEVES 15 DE OCTUBRE, 2015 </strong>.<br />
-    Evite suspensiones, pague a tiempo. </span></div></td>
-  </tr>
-</table>
-
-<br />
-
-<hr align="left" width="800" />
-<p class="style11">CFE</p>
-<table width="800" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td valign="top"><div align="justify"><span class="style7">Para evitar inconvenientes con el pago del servicio de CFE, les sugerimos consulten su estado de cuenta en Internet, en la página: <a href="http://www.cfe.gob.mx/paginas/home.aspx" target="_blank">http://www.cfe.gob.mx/paginas/home.aspx</a><strong><br />
-    </strong><br />
-    Es muy sencillo darse de alta, solo es necesario que tengan a la mano el <strong>último</strong> recibo.</span></div></td>
-  </tr>
-</table>
-
+        <div class="mainsite-container">
+            <h2 class="section_tittle"><strong>Estacionamiento</strong></h2>
+            <table width="800" border="0" cellpadding="0" cellspacing="0" align="center">
+                <tr>
+                    <td align="top">
+                        <div align="justify">
+                            <span class="style7">
+                                Les recordamos que la fecha límite para hacer el pago de estacionamiento es el
+                                <strong>JUEVES 15 DE OCTUBRE, 2015</strong>
+                                .
+                                <br>
+                                Evita suspenciones, pague a tiempo.
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="mainsite-container">
+            <h2 class="section_tittle"><strong>CFE</strong></h2>
+            <table width="800" border="0" cellpadding="0" cellspacing="0" align="center">
+                <tr>
+                    <td align="top">
+                        <div align="justify">
+                            <span class="style7">
+                                Para evitar inconvenientes con el pago del servicio de CFE, les sugerimos consulten su estado de cuenta en Internet, en la página: <a href="http://www.cfe.gob.mx/paginas/home.aspx" target="_blank">http://www.cfe.gob.mx/paginas/home.aspx</a>
+                                <br>
+                                Es muy sencillo darse de alta, solo es necesario que tengan a la mano el último recibo.
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </table>
 {% endblock %}

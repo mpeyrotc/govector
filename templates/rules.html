@@ -1,128 +1,35 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Condominios</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <style type="text/css">
-<!--
-a:link {
-	color: #0099CC;
-	text-decoration: none;
-}
-a:visited {
-	text-decoration: none;
-	color: #0099CC;
-}
-a:hover {
-	text-decoration: none;
-	color: #0099CC;
-}
-a:active {
-	text-decoration: none;
-	color: #0099CC;
-}
-.style10 {
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
-}
-.style12 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: #333333;
-}
-.style113 {font-family: Arial, Helvetica, sans-serif}
--->
-</style>
-<script type="text/JavaScript">
-<!--
-function MM_preloadImages() { //v3.0
-  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
-    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
-    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
-}
 
-function MM_swapImgRestore() { //v3.0
-  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
-}
+{% block title %}
+  Informacion General
+{% endblock %}
+    
 
-function MM_findObj(n, d) { //v4.01
-  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
-    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
-  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-  if(!x && d.getElementById) x=d.getElementById(n); return x;
-}
+{% block script %}
+<script src="{% static 'js/site/general.js' %}"></script>
+{% endblock %}
 
-function MM_swapImage() { //v3.0
-  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
-   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
-}
-//-->
-</script>
-</head>
-<body leftmargin="20" topmargin="20" rightmargin="20" bottommargin="20" onload="MM_preloadImages('http://www.cintermex.com/Condominos/Imgs/RegCondAdmon2.jpg','http://www.cintermex.com/Condominos/Imgs/RegEstac2.jpg')">
-<div class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
-
-            <a href="#" class="navbar-brand">Cintermex</a>
-
-            <button class="navbar-toggle" data-toggle = "collapse" data-target=".navHeaderCollapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <div class="collapse navbar-collapse navHeaderCollpase">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="{% url 'home' %}">Inicio</a></li>
-                    <li><a href="{% url 'news' %}">Avisos</a></li>
-                    <li class="dropdown">
-                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Condominios<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="permanent_business.html">Negocios Permanentes</a></li>
-                            <li><a href="disponibility.html">Especios Disponibles</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Informacion<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="general.html">Guia General</a></li>
-                            <li><a href="#">Especios Disponibles</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Miembros</a></li>
-                </ul>
-            </div>
+{% block content %}
+<div class="mainsite-container">
+    <div id="rules" class="navigation_section"></div>
+        <div>
+            <h1 class="section_title">Reglamentos</h1>
         </div>
-    </div>
-
-<table width="800" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" valign="middle" background="http://www.cintermex.com/Condominos/Imgs/Background.png" bgcolor="#DCDCDC"> <div align="center">
-    <span class="style10">R E G L A M E N T O S </span></div></td>
-  </tr>
-</table>
-<br />
-<table width="800" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td valign="middle"><div align="justify" class="style12"><span class="style113">Los siguientes documentos muestran los reglamentos que es importante que los ocupantes conozcan tanto por parte de las operaciones del condominio como del estacionamiento interno.<br />
-(Necesita <a href="http://get.adobe.com/es/reader/" target="_blank"><strong>Adobe Acrobat Reader</strong></a>).</span>.</div></td>
-  </tr>
-</table>
-<br />
-<hr align="left" width="800" /><br />
-<table width="800" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="400" align="center" valign="middle"><div align="center"><a href="http://www.cintermex.com/condominos/Directorio_Cintermex.pdf" target="mainFrame"></a><a href="http://www.cintermex.com/Condominos/Doc/RegCondAdm.pdf" target="mainFrame"><img src="http://www.cintermex.com/Condominos/Imgs/RegCondAdmon.jpg" width="300" height="383" border="0" align="middle" id="Image1" onmouseover="MM_swapImage('Image1','','http://www.cintermex.com/Condominos/Imgs/RegCondAdmon2.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></div></td>
-    <td width="400" align="center" valign="middle"><a href="http://www.cintermex.com/Condominos/Doc/RegEstacionamiento.pdf" target="mainFrame"><img src="http://www.cintermex.com/Condominos/Imgs/RegEstac.jpg" width="251" height="383" border="0" align="middle" id="Image2" onmouseover="MM_swapImage('Image2','','http://www.cintermex.com/Condominos/Imgs/RegEstac2.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></td>
-  </tr>
-</table>
-</body>
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-</html>
+    <br/>
+    <table width="800" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="middle"><div align="justify" class="style12"><span class="style113">Los siguientes documentos muestran los reglamentos que es importante que los ocupantes conozcan tanto por parte de las operaciones del condominio como del estacionamiento interno.<br />
+    (Necesita <a href="http://get.adobe.com/es/reader/" target="_blank"><strong>Adobe Acrobat Reader</strong></a>).</span>.</div></td>
+      </tr>
+    </table>
+    <br />
+    <hr align="left" width="800" /><br />
+    <table width="800" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="400" align="center" valign="middle"><div align="center"><a href="http://www.cintermex.com/condominos/Directorio_Cintermex.pdf" target="mainFrame"></a><a href="http://www.cintermex.com/Condominos/Doc/RegCondAdm.pdf" target="mainFrame"><img src="http://www.cintermex.com/Condominos/Imgs/RegCondAdmon.jpg" width="300" height="383" border="0" align="middle" id="Image1" onmouseover="MM_swapImage('Image1','','http://www.cintermex.com/Condominos/Imgs/RegCondAdmon2.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></div></td>
+        <td width="400" align="center" valign="middle"><a href="http://www.cintermex.com/Condominos/Doc/RegEstacionamiento.pdf" target="mainFrame"><img src="http://www.cintermex.com/Condominos/Imgs/RegEstac.jpg" width="251" height="383" border="0" align="middle" id="Image2" onmouseover="MM_swapImage('Image2','','http://www.cintermex.com/Condominos/Imgs/RegEstac2.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+      </tr>
+    </table>
+</div>
+{% endblock %}

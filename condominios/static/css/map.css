@@ -1,0 +1,7 @@
+.long_section {
+    background-image: url(../images/grey_testing.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+    margin-bottom: -40px;
+}

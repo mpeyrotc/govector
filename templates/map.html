@@ -1,10 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Ubicación
+{% endblock %}
 
-</body>
-</html>
+{% block css %}
+    <link href='{% static 'css/map.css' %}' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block content %}
+    <!-- Section 2 -->
+    <div id="location" class="navigation_section"></div>
+    <div class="long_section">
+        <div class="mainsite-container">
+            <div>
+                <h1 class="section_title map_address">Ubicación</h1>
+                <p class="map_address">Av. Fundidora No. 501 Col. Obrera, C.P. 64010, </br> Monterrey, Nuevo León,
+                    México</p>
+                <div align="center">
+                    <div align="center">
+                        <iframe width="758" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                                src="https://maps.google.com.mx/maps/ms?msa=0&amp;msid=210059875164801364416.0004994837d8c0989ca8f&amp;ie=UTF8&amp;ll=25.677734,-100.288761&amp;spn=0,0&amp;iwloc=000499483b74d4c32bdff&amp;output=embed">
+                        </iframe>
+                        <br/>
+                        <br/>
+                        <small class="map_address">Ver <a
+                                href="https://maps.google.com.mx/maps/ms?msa=0&amp;msid=210059875164801364416.0004994837d8c0989ca8f&amp;ie=UTF8&amp;ll=25.677734,-100.288761&amp;spn=0,0&amp;iwloc=000499483b74d4c32bdff&amp;source=embed"
+                                style="color:#0000FF;text-align:left">CINTERMEX</a> en un mapa ampliado
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,53 +1,12 @@
+{% extends "base.html"  %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Condominios</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <style type="text/css">
-<!--
-a:link {
-	color: #0099CC;
-	text-decoration: none;
-}
-a:visited {
-	text-decoration: none;
-	color: #0099CC;
-}
-a:hover {
-	text-decoration: none;
-	color: #0099CC;
-}
-a:active {
-	text-decoration: none;
-	color: #0099CC;
-}
-.style10 {
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color: #333333;
-}
-.style12 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-}
-.style15 {color: #333333}
-.style23 {color: #333333; font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
-.style25 {color: #333333; font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; }
-.style30 {
-	color: #333333;
-	font-weight: bold;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 17px;
-}
--->
-    </style>
-</head>
-<body topmargin="20" leftmargin="20" rightmargin="20" bottommargin="20">
-    <div class="navbar navbar-inverse navbar-static-top">
+
+{% block title %}
+    Directorio
+{% endblock %}
+
+{% block content %}
+   <div class="navbar navbar-inverse navbar-static-top">
         <div class="container">
 
             <a href="#" class="navbar-brand">Cintermex</a>
@@ -254,7 +213,6 @@ a:active {
   </tr>
 </table>
 <br />
-</body >
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-</html>
+{% endblock %}
+
+

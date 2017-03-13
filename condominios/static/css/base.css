@@ -44,7 +44,7 @@ blockquote.style2 {
 
 body {
     font-family: 'Raleway', sans-serif;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .site_footer {
@@ -58,6 +58,15 @@ body {
 
 .navbar {
     font-size: 18px;
+}
+
+#navicon {
+    width: 85px;
+    background: url(../images/Nav_icon.png) no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 .section_title {

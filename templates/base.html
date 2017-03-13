@@ -15,7 +15,7 @@
     {% block css %}{% endblock %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Condominios{% endblock %}</title>
+    <title>{% block title %}Condominos{% endblock %}</title>
 </head>
 <body data-spy="scroll" data-target=".navbar-fixed-top" data-offset="50">
     {% block nav_bar %}
@@ -30,14 +30,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url 'home' %}">Inicio</a>
+                <a class="navbar-brand" id="navicon" href="#"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
                     <li><a href="{% url 'news' %}">Avisos</a></li>
                     <li class="dropdown">
-                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Condominios<b class="caret"></b></a>
+                        <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Condominos<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'permanent_business' %}">Negocios Permanentes</a></li>
                             <li><a href="{% url 'disponibility' %}">Espacios Disponibles</a></li>

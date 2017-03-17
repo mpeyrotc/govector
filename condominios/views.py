@@ -9,23 +9,16 @@ module_dir = os.path.dirname(__file__)  # get current directory
 # Create your views here.
 def home(request):
     context = {}
-
-    server = '200.23.150.13\SQL2008'
-    database = 'Cintermex_Prod'
-    username = 'sa'
-    password = '2333'
-    driver = '{SQL Server Native Client 11.0}'
-    cnxn = pyodbc.connect(
-        'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=61451;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
-
+    
     try:
-        #conn = psycopg2.connect(database="Cintermex_Prod\SQL2008", user="sa", host="200.23.150.13", password="2333")
+        #conn = psycopg2.connect(database="Condominos", user="DESKTOP-5P46H40\alexr", host="localhost", password="")
         #conn.close()
-
-        server = '200.23.150.13'
-        database = 'Cintermex_Prod'
-        username = 'sa'
-        password = '2333'
+        
+        
+        server = 'DESKTOP-5P46H40'
+        database = 'Condominos'
+        username = 'master'
+        password = 'master'
         driver = '{ODBC Driver 13 for SQL Server}'
         cnxn = pyodbc.connect(
             'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)

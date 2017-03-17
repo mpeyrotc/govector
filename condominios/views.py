@@ -10,14 +10,6 @@ module_dir = os.path.dirname(__file__)  # get current directory
 def home(request):
     context = {}
 
-    server = '200.23.150.13\SQL2008'
-    database = 'Cintermex_Prod'
-    username = 'sa'
-    password = '2333'
-    driver = '{SQL Server Native Client 11.0}'
-    cnxn = pyodbc.connect(
-        'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=61451;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
-
     try:
         #conn = psycopg2.connect(database="Cintermex_Prod\SQL2008", user="sa", host="200.23.150.13", password="2333")
         #conn.close()

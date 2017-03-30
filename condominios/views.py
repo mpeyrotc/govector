@@ -3,6 +3,7 @@ import os
 import json
 import psycopg2
 import pyodbc
+import xml.etree.ElementTree
 
 module_dir = os.path.dirname(__file__)  # get current directory
 
@@ -38,6 +39,13 @@ def news(request):
 
 def permanent_business(request):
     context = {}
+
+    file_path = os.path.join(module_dir, '../condominios/static/xml/Permanentes.xml')
+    e = xml.etree.ElementTree.parse(file_path).getroot()
+
+    for child in e:
+        print(child.tag, child.attrib)
+
     return render(request, "permanent_business.html", context)
 
 

@@ -1,23 +1,68 @@
 {% extends "base.html" %}
 
 {% block title %}
-  Negocios Permanentes
+    Negocios Permanentes
 {% endblock %}
 
-
 {% block content %}
-     <!-- Section 1 Negocios Permanentes -->
-    <table width="800" border="0" cellpadding="0" cellspacing="0">
-        <div class="mainsite-container">
-            <div id="permanent" class="navigation_section"></div>
-                <div>
-                    <h1 class="section_title">Negocios Permanentes</h1>
-                </div>
-            <br/>
-        </div>
-        <div align="center">
-            <iframe src="http://www.cintermex.com/Condominos/Negocios_ABC.aspx?LetraP=A&LetraU=B&Titulo=A-B" width="50%" height="550px" frameborder="0" scrolling="auto" id="OrgFrame" name="OrgFrame"></iframe>
-        </div>
-    </table>
+    <!-- Section 1 Negocios Permanentes
+   <table width="800" border="0" cellpadding="0" cellspacing="0">
+       <div class="mainsite-container">
+           <div id="permanent" class="navigation_section"></div>
+               <div>
+                   <h1 class="section_title">Negocios Permanentes</h1>
+               </div>
+           <br/>
+       </div>
+       <div align="center">
+           <iframe src="http://www.cintermex.com/Condominos/Negocios_ABC.aspx?LetraP=A&LetraU=B&Titulo=A-B" width="50%" height="550px" frameborder="0" scrolling="auto" id="OrgFrame" name="OrgFrame"></iframe>
+       </div>
+   </table>
+   -->
+    <script>
+        function FiltrarPermanentes(letra) {
+            $( ".local" ).each(function() {
+                if(letra == "todos" || $( this ).attr('id').startsWith(letra.toLowerCase()) || $( this ).attr('id').startsWith(letra.toUpperCase())) {
+                    $(this).css("overflow", "visible");
+                    $(this).css("height", "auto");
+                } else {
+                    $(this).css("overflow", "hidden");
+                    $(this).css("height", "0");
+                }
+            });
+        }
+    </script>
 
+    <div class="mainsite-container">
+        <span class="top">
+            <p> NOTFINAL </p>
+            <span class="filter"><a id="todos" href="#" onclick="FiltrarPermanentes('todos');return false;">Todos</a></span>
+            {% for letter in alphabet %}
+                <span class="filter"><a id="{{ letter }}" href="#" onclick="FiltrarPermanentes('{{ letter }}');return false;">{{ letter }}</a></span>
+            {% endfor %}
+        </span>
+
+        {% for business in business_data %}
+            <div id="{{ business.name }}" class="local">
+                <p style="margin-top: 20px" class="section_subtitle"><b>{{ business.name }}</b>
+                    <span style="text-align: right; float: right"> {{ business.local }} </span></p>
+
+                {% if business.actividades %}
+                    <p><b>Actividades:</b> {{ business.actividades }}</p>
+                {% endif %}
+
+                {% if business.telefono %}
+                    <p><b>Teléfono:</b> {{ business.telefono }}
+                {% endif %}
+
+                {% if business.email %}
+                    <p><b>Correo electrónico:</b> {{ business.email }}</p>
+                {% endif %}
+
+                {% if business.website %}
+                    <p><b>Página web:</b> <a>{{ business.website }}</a></p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

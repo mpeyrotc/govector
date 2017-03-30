@@ -1,9 +1,11 @@
+# coding=utf-8
 from django.shortcuts import render
 import os
 import json
 import psycopg2
 import pyodbc
 import xml.etree.ElementTree
+import re
 
 module_dir = os.path.dirname(__file__)  # get current directory
 
@@ -14,8 +16,7 @@ def home(request):
     try:
         #conn = psycopg2.connect(database="Condominos", user="DESKTOP-5P46H40\alexr", host="localhost", password="")
         #conn.close()
-        
-        
+
         server = 'DESKTOP-5P46H40'
         database = 'Condominos'
         username = 'master'
@@ -40,11 +41,51 @@ def news(request):
 def permanent_business(request):
     context = {}
 
+    context['alphabet'] = [chr(i) for i in range(ord('A'), ord('Z') + 1)]
+
+    business = []
+
     file_path = os.path.join(module_dir, '../condominios/static/xml/Permanentes.xml')
     e = xml.etree.ElementTree.parse(file_path).getroot()
 
+    p_actividades = re.compile("Actividades: </b>(.*)</td>")
+    p_email = re.compile("href=mailto:([\w+\.]+@[\w+\.]+)>")
+    p_telefono = re.compile("Teléfono:\W+</b>([0-9+\(\)-]+)</td>")
+    p_website = re.compile("Website: </b><a href=(.*)target=_blank>")
+    p_local = re.compile("Local=[0-9]+ target=_self>(.*)</a><tr>")
+    p_local_2 = re.compile("Nivel=(.*)&Local=([0-9]+)")
+
     for child in e:
-        print(child.tag, child.attrib)
+        data = child.find('Condomino').text
+        element = {'name': child.find('NomPlanosOcu54').text}
+
+        match = p_actividades.search(data)
+        if match:
+            element['actividades'] = match.group(1)
+
+        match = p_email.search(data)
+        if match:
+            element['email'] = match.group(1)
+
+        match = p_telefono.search(data)
+        if match:
+            element['telefono'] = match.group(1)
+
+        match = p_website.search(data)
+        if match:
+            element['website'] = match.group(1)
+
+        match = p_local.search(data)
+        if match:
+            element['local'] = match.group(1)
+
+        match = p_local_2.search(data)
+        if match:
+            element['local'] = match.group(1) + " " + match.group(2)
+
+        business.append(element)
+
+        context['business_data'] = business
 
     return render(request, "permanent_business.html", context)
 

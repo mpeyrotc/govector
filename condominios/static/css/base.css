@@ -86,3 +86,11 @@ body {
 
     font-size: 22px;
 }
+
+.top {
+    margin-top: 10px;
+}
+
+span.filter {
+    margin-right: 20px;
+}

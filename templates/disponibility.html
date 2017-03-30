@@ -1,22 +1,42 @@
 {% extends "base.html" %}
 
 {% block title %}
-  Espacios Disponibles
+    Espacios Disponibles
 {% endblock %}
 
 {% block content %}
     <!-- Section 2 Espacios Disponibles -->
-    <table width="800" border="0" cellpadding="0" cellspacing="0">
-        <div class="mainsite-container">
-            <div id="disponibility" class="navigation_section"></div>
-                <div>
-                    <h1 class="section_title">Espacios Disponibles</h1>
-                </div>
-            <br/>
-        </div>
-        <div align="center">
-            <iframe src="http://www.cintermex.com/Condominos/Disponibilidad_Web.aspx" width="50%" height="550px" frameborder="0" scrolling="auto" id="OrgFrame" name="OrgFrame"  ></iframe>
-        </div>
-    </table>
+
+    <div class="mainsite-container">
+        <span class="top">
+            <p> NOTFINAL </p>
+        </span>
+
+        {% for spaces in spaces_data %}
+            <div>
+                <p style="margin-top: 20px" class="section_subtitle"><b>Local vacante: {{ spaces.local }}</b></p>
+
+                {% if spaces.status %}
+                    <p><b>Estatus:</b> {{ spaces.status }}</p>
+                {% endif %}
+
+                {% if spaces.metros %}
+                    <p><b>Dimensiones: </b> {{ spaces.metros }} metros cuadrados
+                {% endif %}
+
+                {% if spaces.contacto %}
+                    <p><b>Contacto:</b> {{ spaces.contacto }}</p>
+                {% endif %}
+
+                {% if spaces.telefono %}
+                    <p><b>Teléfono:</b> {{ spaces.telefono }}</p>
+                {% endif %}
+
+                {% if spaces.comentarios %}
+                    <p><b>Comentarios:</b> {{ spaces.comentarios }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

@@ -9,13 +9,14 @@ import re
 
 module_dir = os.path.dirname(__file__)  # get current directory
 
+
 # Create your views here.
 def home(request):
     context = {}
 
     try:
-        #conn = psycopg2.connect(database="Condominos", user="DESKTOP-5P46H40\alexr", host="localhost", password="")
-        #conn.close()
+        # conn = psycopg2.connect(database="Condominos", user="DESKTOP-5P46H40\alexr", host="localhost", password="")
+        # conn.close()
 
         server = 'DESKTOP-5P46H40'
         database = 'Condominos'
@@ -28,7 +29,6 @@ def home(request):
         print "We are happy!"
     except:
         print "we are not happy :("
-
 
     return render(request, "index.html", context)
 
@@ -97,6 +97,51 @@ def map(request):
 
 def disponibility(request):
     context = {}
+
+    spaces = []
+
+    file_path = os.path.join(module_dir, '../condominios/static/xml/Disponibles.xml')
+    e = xml.etree.ElementTree.parse(file_path).getroot()
+
+    p_local = re.compile("<b>Local Vacante: (.*)</b></td>")
+    p_status = re.compile("<b>Status: </b>(.*)</td>\n</tr>")
+    p_metros = re.compile("<b>Metros cuadrados: </b>([0-9.]+)</td></tr>")
+    p_contacto = re.compile("<b>Contacto: </b>(.*)</td></tr><tr><td><b>Tel")
+    p_telefono = re.compile("fono: </b>([0-9-\W\(\)\+]+)</td></tr>")
+    p_comentarios = re.compile("Comentarios: </b>(.*)</td></tr>")
+
+    for child in e:
+        data = child.find('Condomino').text
+        element = {}
+
+        match = p_local.search(data)
+        if match:
+            element['local'] = match.group(1)
+
+        match = p_status.search(data)
+        if match:
+            element['status'] = match.group(1)
+
+        match = p_metros.search(data)
+        if match:
+            element['metros'] = match.group(1)
+
+        match = p_contacto.search(data)
+        if match:
+            element['contacto'] = match.group(1)
+
+        match = p_telefono.search(data)
+        if match:
+            element['telefono'] = match.group(1)
+
+        match = p_comentarios.search(data)
+        if match:
+            element['comentarios'] = match.group(1)
+
+        spaces.append(element)
+
+        context['spaces_data'] = spaces
+
     return render(request, "disponibility.html", context)
 
 

@@ -1,11 +1,13 @@
 # coding=utf-8
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.core.urlresolvers import reverse
 import os
 import json
 import psycopg2
 import pyodbc
 import xml.etree.ElementTree
 import re
+from .forms import LoginForm 
 
 module_dir = os.path.dirname(__file__)  # get current directory
 
@@ -30,16 +32,55 @@ def home(request):
     except:
         print "we are not happy :("
 
+
     return render(request, "index.html", context)
 
 
 def news(request):
     context = {}
+    try:
+
+        server = 'DESKTOP-5P46H40'
+        database = 'Condominos'
+        username = 'master'
+        password = 'master'
+        driver = '{ODBC Driver 13 for SQL Server}'
+        cnxn = pyodbc.connect(
+            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+
+        print "We are happy!"
+    except:
+        print "we are not happy :("
+    
     return render(request, "news.html", context)
 
 
 def permanent_business(request):
     context = {}
+    
+    try:
+
+        server = 'DESKTOP-5P46H40'
+        database = 'Condominos'
+        username = 'master'
+        password = 'master'
+        driver = '{ODBC Driver 13 for SQL Server}'
+        cnxn = pyodbc.connect(
+            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+
+        print "We are happy!"
+        cur = cnxn.cursor()
+
+        cur.execute("{CALL WebCondominosABC (?, ?)}", ("A", "Z"))
+        print(cur.fetchall())
+
+        cur.close()
+    #querystring = "SELECT * FROM AvisoMasivo"
+        
+        #cur.execute(querystring)
+        #cnxn.commit()
+    except:
+        print "we are not happy :("
 
     context['alphabet'] = [chr(i) for i in range(ord('A'), ord('Z') + 1)]
 
@@ -97,6 +138,21 @@ def map(request):
 
 def disponibility(request):
     context = {}
+    
+    try:
+
+        server = 'DESKTOP-5P46H40'
+        database = 'Condominos'
+        username = 'master'
+        password = 'master'
+        driver = '{ODBC Driver 13 for SQL Server}'
+        cnxn = pyodbc.connect(
+            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+
+        print "We are happy!"
+    except:
+        print "we are not happy :("
+     
 
     spaces = []
 
@@ -200,3 +256,40 @@ def directory(request):
 def contact(request):
     context = {}
     return render(request, "contact.html", context)
+
+def planoPB(request):
+    context = {}
+    return render(request, "Negocios_PlanoPB.aspx", context)
+
+def planoPN(request):
+    context = {}
+    return render(request, "Negocios_PlanoPN.aspx", context)
+
+def login(request):
+    context = {}
+    data = {"password": "",
+            "username": ""}
+
+    if request.method == "POST":
+        form = LoginForm(request.POST)
+        context["form"] = form
+
+        if form.is_valid():
+            return redirect(reverse("estado"))
+        
+        form = LoginForm(initial = data)
+        context["form"] = form
+        
+        return render(request, "login.html", context)
+
+    else:
+        form = LoginForm(initial = data)
+        context["form"] = form
+
+        return render(request, "login.html", context)
+    
+    
+
+def estado(request):
+    context = {}
+    return render(request, "estadocuenta.html", context)

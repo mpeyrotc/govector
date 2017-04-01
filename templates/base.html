@@ -42,6 +42,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'permanent_business' %}">Negocios Permanentes</a></li>
                             <li><a href="{% url 'disponibility' %}">Espacios Disponibles</a></li>
+                            <li><a href="{% url 'planoPB' %}">Mapa</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -59,7 +60,7 @@
                             <li><a href="{% url 'map' %}">Ubicación</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Miembros</a></li>
+                    <li><a href="{% url 'login' %}">Miembros</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^avisos$', condominios.views.news, name='news'),
     url(r'^condominios/$', condominios.views.permanent_business, name='permanent_business'),
     url(r'^condominios/negocios-permanentes$', condominios.views.permanent_business, name='permanent_business'),
-    url(r'^condominios/negocios-permanentes/mapa$', condominios.views.map, name='map'),
+    url(r'^condominios/negocios-permanentes/mapa$', condominios.views.planoPB, name='planoPB'),
     url(r'^condominios/disponibilidad$', condominios.views.disponibility, name='disponibility'),
     url(r'^informacion/$', condominios.views.general, name='general'),
     url(r'^informacion/guia-general$', condominios.views.general, name='general'),
@@ -36,4 +36,7 @@ urlpatterns = [
     url(r'^nosotros/$', condominios.views.about_us, name='about_us'),
     url(r'^mapa/$', condominios.views.map, name='map'),
     url(r'^nosotros/contacto$', condominios.views.contact, name='contact'),
+    url(r'^miembros/$', condominios.views.login, name='login'),
+    url(r'^miembros/login$', condominios.views.login, name='login'),
+    url(r'^miembros/estado$', condominios.views.estado, name='estado'),
 ]

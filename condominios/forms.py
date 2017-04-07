@@ -44,7 +44,6 @@ class LoginForm(forms.Form):
                 raise forms.ValidationError("Usuario o contraseña invalidos")
 
             
-        
         except:
             print "the good life"
             raise forms.ValidationError("El nombre de usuario no existe")

@@ -36,7 +36,7 @@ def home(request):
     return render(request, "index.html", context)
 
 
-def news(request):
+def avisos(request):
     context = {}
     try:
 
@@ -52,10 +52,10 @@ def news(request):
     except:
         print "we are not happy :("
     
-    return render(request, "news.html", context)
+    return render(request, "avisos.html", context)
 
 
-def permanent_business(request):
+def negocios_permanentes(request):
     context = {}
     
     try:
@@ -128,15 +128,15 @@ def permanent_business(request):
 
         context['business_data'] = business
 
-    return render(request, "permanent_business.html", context)
+    return render(request, "negocios_permanentes.html", context)
 
 
-def map(request):
+def mapa(request):
     context = {}
-    return render(request, "map.html", context)
+    return render(request, "mapa.html", context)
 
 
-def disponibility(request):
+def disponibilidad(request):
     context = {}
     
     try:
@@ -198,7 +198,7 @@ def disponibility(request):
 
         context['spaces_data'] = spaces
 
-    return render(request, "disponibility.html", context)
+    return render(request, "disponibilidad.html", context)
 
 
 def general(request):
@@ -206,37 +206,17 @@ def general(request):
     return render(request, "general.html", context)
 
 
-def rules(request):
+def reglamentos(request):
     context = {}
-    return render(request, "rules.html", context)
+    return render(request, "reglamentos.html", context)
 
 
-def instalations_services(request):
+def instalaciones_y_servicios(request):
     context = {}
-    return render(request, "instalations_services.html", context)
+    return render(request, "instalaciones_y_servicios.html", context)
 
 
-def atms(request):
-    context = {}
-    return render(request, "atms.html", context)
-
-
-def instalations(request):
-    context = {}
-    return render(request, "instalations.html", context)
-
-
-def elevators(request):
-    context = {}
-    return render(request, "elevators.html", context)
-
-
-def locals(request):
-    context = {}
-    return render(request, "locals.html", context)
-
-
-def about_us(request):
+def nosotros(request):
     context = {}
 
     file_path = os.path.join(module_dir, '../condominios/static/files/directory.json')
@@ -245,17 +225,13 @@ def about_us(request):
 
     context["directory_data"] = directory_data
 
-    return render(request, "about_us.html", context)
+    return render(request, "nosotros.html", context)
 
 
 def directory(request):
     context = {}
     return render(request, "directory.html", context)
 
-
-def contact(request):
-    context = {}
-    return render(request, "contact.html", context)
 
 def planoPB(request):
     context = {}

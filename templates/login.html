@@ -35,6 +35,7 @@
                 <form method="POST" action="{% url 'login' %}">
                     <div class="row">
                         <div class ="col-md-6">
+                            {{ form.username.ValidationError}}
                             <label class="control-label">{{ form.username.label_tag}}</label>
                             {{ form.username}}
                         </div>
@@ -42,6 +43,7 @@
                     
                     <div class="row padding-top-10">
                         <div class ="col-md-6">
+                            {{ form.password.ValidationError}}
                             <label class="control-label">{{ form.password.label_tag}}</label>
                             {{ form.password}}
                         </div>

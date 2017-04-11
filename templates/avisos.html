@@ -12,45 +12,19 @@
                     <h1 class="section_title">Avisos</h1>
                 </div>
         </div>
+        {% for aviso in avisos %}
         <div class="mainsite-container">
-            <h2 class="section_tittle"><strong>Estacionamiento</strong></h2>
+            <h2 class="section_tittle"><strong> {{ aviso.nombre }}  </strong></h2>
             <table width="768" border="0" cellpadding="0" cellspacing="0" align="center">
                 <tr>
                     <td align="top">
                         <div align="justify">
-                            <span class="style7">
-                                Les recordamos que la fecha límite para hacer el pago de estacionamiento es el
-                                <strong>JUEVES 15 DE OCTUBRE, 2015</strong>
-                                .
-                                <br>
-                                Evita suspenciones, pague a tiempo.
-                            </span>
+                            <span class="style7"> {{ aviso.descripcion }} </span>
                         </div>
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="mainsite-container">
-            <h2 class="section_tittle"><strong>CFE</strong></h2>
-            <table width="768" border="0" cellpadding="0" cellspacing="0" align="center">
-                <tr>
-                    <td align="top">
-                        <div align="justify">
-                            <span class="style7">
-                                <p>Para evitar inconvenientes con el pago del servicio de CFE,
-                                les sugerimos consulten su estado de cuenta en Internet, en la página:</p>
-
-                                <p></p>
-
-                                <a href="http://www.cfe.gob.mx/paginas/home.aspx" target="_blank">http://www.cfe.gob.mx/paginas/home.aspx</a>
-                                <br>
-                                <p></p>
-                                <p>Es muy sencillo darse de alta, solo es necesario que tengan a la mano el último recibo.</p>
-                            </span>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
+        {% endfor %}
     </table>
 {% endblock %}

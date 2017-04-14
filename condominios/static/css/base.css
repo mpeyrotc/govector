@@ -94,3 +94,8 @@ body {
 span.filter {
     margin-right: 20px;
 }
+
+.scrollable {
+    height: 100px;
+    overflow-y: auto;
+}

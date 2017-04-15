@@ -299,3 +299,27 @@ def login(request):
 def estado(request):
     context = {}
     return render(request, "estadocuenta.html", context)
+
+def regconadm(request):
+    context = {}
+    return render(request, "regconadm.html", context)
+
+def regest(request):
+    context = {}
+    return render(request, "regest.html", context)
+
+def dircintermex(request):
+    context = {}
+    return render(request, "dircintermex.html", context)
+
+def dircondominos(request):
+    context = {}
+    return render(request, "dircondominos.html", context)
+
+def guiaservicios(request):
+    context = {}
+    return render(request, "guiaservicios.html", context)
+
+def reglamentoconstr(request):
+    context = {}
+    return render(request, "reglamentoconstr.html", context)

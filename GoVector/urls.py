@@ -34,4 +34,10 @@ urlpatterns = [
     url(r'^miembros/$', condominios.views.login, name='login'),
     url(r'^miembros/login$', condominios.views.login, name='login'),
     url(r'^miembros/estado$', condominios.views.estado, name='estado'),
+    url(r'^informacion/reglamentos/condominios-administracion$', condominios.views.regconadm, name='regconadm'),
+    url(r'^informacion/reglamentos/estacionamiento$', condominios.views.regest, name='regest'),
+    url(r'^informacion/guia-general/directorio-cintermex$', condominios.views.dircintermex, name='dircintermex'),
+    url(r'^informacion/guia-general/directorio-condominos$', condominios.views.dircondominos, name='dircondominos'),
+    url(r'^informacion/guia-general/guia-servicios$', condominios.views.guiaservicios, name='guiaservicios'),
+    url(r'^informacion/guia-general/reglamento-construccion$', condominios.views.reglamentoconstr, name='reglamentoconstr'),
 ]

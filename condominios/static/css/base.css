@@ -96,6 +96,6 @@ span.filter {
 }
 
 .scrollable {
-    height: 100px;
+    height: 800px;
     overflow-y: auto;
 }

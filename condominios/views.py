@@ -41,9 +41,8 @@ def home(request):
         context["avisos"] = avisos
         cur.close()
 
-        print "We are happy!"
     except:
-        print "we are not happy :("
+        print "Connection error"
 
 
     return render(request, "index.html", context)
@@ -61,7 +60,6 @@ def avisos(request):
         cnxn = pyodbc.connect(
             'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
 
-        print "We are happy!"
         
         cur = cnxn.cursor()
         
@@ -81,7 +79,7 @@ def avisos(request):
         cur.close()
         
     except:
-        print "we are not happy :("
+        print "Connection error"
     
     return render(request, "avisos.html", context)
 
@@ -99,7 +97,6 @@ def negocios_permanentes(request):
         cnxn = pyodbc.connect(
             'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
 
-        print "We are happy!"
         cur = cnxn.cursor()
 
         cur.execute("{CALL WebCondominosABC (?, ?)}", ("A", "Z"))
@@ -152,7 +149,7 @@ def negocios_permanentes(request):
         cur.close()
 
     except:
-        print "we are not happy :("
+        print "Connection error"
 
     
 
@@ -225,7 +222,7 @@ def disponibilidad(request):
         
         
     except:
-        print "we are not happy :("
+        print "Connection error"
      
 
     return render(request, "disponibilidad.html", context)

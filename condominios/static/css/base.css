@@ -26,7 +26,12 @@
 }
 
 .mainsite-container {
-    padding-top: 30px;
+    padding-top: 50px;
+    text-align: justify;
+}
+
+.mainsite-container-login {
+    padding-top: 55px;
     text-align: justify;
 }
 

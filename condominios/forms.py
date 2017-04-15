@@ -29,12 +29,8 @@ class LoginForm(forms.Form):
             querystring = "SELECT Username, Password FROM Usuarios WHERE Username = '{username}' AND Password = '{password}'".format(username=username, password=password)
             
             cur.execute(querystring)
-            print "ejectur query"
             
             nombreusuario = cur.fetchall()
-            print nombreusuario
-            print username
-            print password
             
             cur.close()
             
@@ -45,7 +41,6 @@ class LoginForm(forms.Form):
 
             
         except:
-            print "the good life"
             raise forms.ValidationError("El nombre de usuario no existe")
         
         return cleaned_data

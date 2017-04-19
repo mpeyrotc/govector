@@ -16,10 +16,10 @@ class LoginForm(forms.Form):
         password = cleaned_data.get("password")
         
         try:
-            server = 'DESKTOP-5P46H40'
+            server = 'CINTERMEX2003'
             database = 'Condominos'
-            usernameDB = 'master'
-            passwordDB = 'master'
+            usernameDB = 'sa'
+            passwordDB = 'sis2333'
             driver = '{ODBC Driver 13 for SQL Server}'
             cnxn = pyodbc.connect(
                 'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + usernameDB + ';PWD=' + passwordDB)

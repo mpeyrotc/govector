@@ -18,13 +18,13 @@ def home(request):
 
     try:
 
-        server = 'DESKTOP-5P46H40'
+        server = 'CINTERMEX2003'
         database = 'Condominos'
-        username = 'master'
-        password = 'master'
+        usernameDB = 'sa'
+        passwordDB = 'sis2333'
         driver = '{ODBC Driver 13 for SQL Server}'
         cnxn = pyodbc.connect(
-            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + usernameDB + ';PWD=' + passwordDB)
         
         cur = cnxn.cursor()
         
@@ -52,13 +52,13 @@ def avisos(request):
     context = {}
     try:
 
-        server = 'DESKTOP-5P46H40'
+        server = 'CINTERMEX2003'
         database = 'Condominos'
-        username = 'master'
-        password = 'master'
+        usernameDB = 'sa'
+        passwordDB = 'sis2333'
         driver = '{ODBC Driver 13 for SQL Server}'
         cnxn = pyodbc.connect(
-            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + usernameDB + ';PWD=' + passwordDB)
 
         
         cur = cnxn.cursor()
@@ -89,13 +89,13 @@ def negocios_permanentes(request):
     
     try:
 
-        server = 'DESKTOP-5P46H40'
+        server = 'CINTERMEX2003'
         database = 'Condominos'
-        username = 'master'
-        password = 'master'
+        usernameDB = 'sa'
+        passwordDB = 'sis2333'
         driver = '{ODBC Driver 13 for SQL Server}'
         cnxn = pyodbc.connect(
-            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + usernameDB + ';PWD=' + passwordDB)
 
         cur = cnxn.cursor()
 
@@ -166,13 +166,13 @@ def disponibilidad(request):
     
     try:
 
-        server = 'DESKTOP-5P46H40'
+        server = 'CINTERMEX2003'
         database = 'Condominos'
-        username = 'master'
-        password = 'master'
+        usernameDB = 'sa'
+        passwordDB = 'sis2333'
         driver = '{ODBC Driver 13 for SQL Server}'
         cnxn = pyodbc.connect(
-            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + usernameDB + ';PWD=' + passwordDB)
         
         cur = cnxn.cursor()
 

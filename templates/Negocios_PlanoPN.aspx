@@ -42,13 +42,13 @@
                             </tr>
                             <tr>
                                 <td vAlign="middle" width="160" align="center"><a href="{% url 'planoPB' %}"><img onmouseover="MM_swapImage('Image10','','../../static/Imgs/Banners/BotonPB_f2.jpg',1)"
-                                            onmouseout="MM_swapImgRestore()" id="Image10" border="0" name="Image10" src="../../static/Imgs/Banners/BotonPB.jpg" width="120" height="80"></a></td>
+                                            onmouseout="MM_swapImgRestore()" id="Image10" border="0" name="Image10" src="{% static 'Imgs/Banners/BotonPB.jpg' %}" width="120" height="80"></a></td>
                                 <td style="WIDTH: 160px" vAlign="middle" width="160" align="center"><a href="{% url 'planoPN' %}"><img onmouseover="MM_swapImage('Image11','','../../static/Imgs/Banners/BotonPN_f2.jpg',1)"
-                                            onmouseout="MM_swapImgRestore()" id="Image11" border="0" name="Image11" src="../../static/Imgs/Banners/BotonPN.jpg" width="120" height="80"></a></SPAN></td>
+                                            onmouseout="MM_swapImgRestore()" id="Image11" border="0" name="Image11" src="{% static 'Imgs/Banners/BotonPN.jpg' %}" width="120" height="80"></a></SPAN></td>
                             </tr>
                             <tr>
                                 <td style="HEIGHT: 480px; WIDTH: 580px" vAlign="middle" colSpan="4" align="center"><br>
-                                    <img id="Image6" border="0" name="Image6" alt="" src="../../static/Imgs/Banners/PrimerNivel.jpg"
+                                    <img id="Image6" border="0" name="Image6" alt="" src="{% static 'Imgs/Banners/PrimerNivel.jpg' %}" 
                                         width="580" height="703" useMap="#Map"> <map id="Map" name="Map">
                                         <area href="#" shape="RECT" coords="110,414,111,415">
                                         <area onmouseover="MM_swapImage('Image6','','../../static/Imgs/Banners/PN/1PN.jpg',1)"

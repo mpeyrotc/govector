@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     {% load static %}
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    {% block meta %}{% endblock %}
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css'>
@@ -42,7 +43,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'negocios_permanentes' %}">Negocios Permanentes</a></li>
                             <li><a href="{% url 'disponibilidad' %}">Espacios Disponibles</a></li>
-                            <li><a href="{% url 'planoPB' %}">Mapa</a></li>
+                            <li><a href="{% url 'planoPB' %}">Mapa Negocios</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

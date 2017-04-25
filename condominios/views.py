@@ -268,6 +268,7 @@ def planoPN(request):
     context = {}
     return render(request, "Negocios_PlanoPN.aspx", context)
 
+
 def login(request):
     context = {}
     data = {"password": "",

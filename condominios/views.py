@@ -304,9 +304,29 @@ def login(request):
 @login_required
 def estado(request):
     context = {}
-    rfc = 'ZIA070424NX9'
+    currentUser = User.objects.filter(id__exact=request.user.id)[0]
     
     try:
+        server = 'CINTERMEX2003'
+        database = 'Condominos'
+        usernameDB = 'sa'
+        passwordDB = 'sis2333'
+        driver = '{ODBC Driver 13 for SQL Server}'
+        cnxn = pyodbc.connect(
+            'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + usernameDB + ';PWD=' + passwordDB)
+
+        cur = cnxn.cursor()
+
+        querystring1 = "SELECT RFC FROM Usuarios WHERE Username = '{usuario}'".format(usuario=currentUser.username)
+
+        cur.execute(querystring1)
+
+        rfc = cur.fetchall()
+        
+        
+
+        cur.close()
+
         server = 'CINTERMEXSAP'
         database = 'DB_CINTERMEX'
         usernameDB = 'sa'
@@ -314,24 +334,27 @@ def estado(request):
         driver = '{ODBC Driver 13 for SQL Server}'
         cnxn = pyodbc.connect(
             'DRIVER=' + driver + ';PORT=61451;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + usernameDB + ';PWD=' + passwordDB)
-        
+
         cur = cnxn.cursor()
-        
-        querystring = "SELECT 'Pagos' as 'Doc', T0.[DocNum], T0.[DocDate], T0.[DocDueDate], T0.[CardCode], T0.[CardName], T0.DocTotal, T0.DocTotal as 'Saldo' FROM ORCT T0 WHERE T0.[NoDocSum] <> 0 AND T0.CardCode = '{rfc}'AND  T0.[Canceled] = 'N' AND T0.DocType = 'C' AND  T0.[DocNum] NOT IN (SELECT DISTINCT T1.[SrcObjAbs] FROM OITR T0  INNER JOIN ITR1 T1 ON T0.ReconNum = T1.ReconNum WHERE  T1.[SrcObjTyp] = 24) UNION ALL SELECT 'Fac' as 'Doc', T0.[DocNum], T0.[DocDate], T0.[DocDueDate], T0.[CardCode], T0.[CardName], T0.[DocTotal], T0.DocTotal-T0.PaidToDate as 'Saldo' FROM OINV T0 WHERE T0.DocStatus = 'O' AND T0.CardCode = '{rfc}' UNION ALL SELECT 'NdC' as 'Doc', T0.[DocNum], T0.[DocDate], T0.[DocDueDate], T0.[CardCode], T0.[CardName], T0.[DocTotal], (T0.DocTotal-T0.PaidToDate)*-1 as 'Saldo' FROM ORIN T0 WHERE T0.DocStatus = 'O' AND T0.CardCode = '{rfc}' UNION ALL SELECT 'Ant' as 'Doc', T0.[DocNum], T0.[DocDate], T0.[DocDueDate], T0.[CardCode], T0.[CardName], T0.[DocTotal],  T0.DocTotal-T0.PaidToDate as 'Saldo' FROM ODPI T0 WHERE T0.DocStatus = 'O' AND T0.CardCode = '{rfc}'".format(rfc=rfc)
+
+        querystring = "SELECT 'Pagos' as 'Doc', T0.[DocNum], T0.[DocDate], T0.[DocDueDate], T0.[CardCode], T0.[CardName], T0.DocTotal, T0.DocTotal as 'Saldo' FROM ORCT T0 WHERE T0.[NoDocSum] <> 0 AND T0.CardCode = '{rfc}'AND  T0.[Canceled] = 'N' AND T0.DocType = 'C' AND  T0.[DocNum] NOT IN (SELECT DISTINCT T1.[SrcObjAbs] FROM OITR T0  INNER JOIN ITR1 T1 ON T0.ReconNum = T1.ReconNum WHERE  T1.[SrcObjTyp] = 24) UNION ALL SELECT 'Fac' as 'Doc', T0.[DocNum], T0.[DocDate], T0.[DocDueDate], T0.[CardCode], T0.[CardName], T0.[DocTotal], T0.DocTotal-T0.PaidToDate as 'Saldo' FROM OINV T0 WHERE T0.DocStatus = 'O' AND T0.CardCode = '{rfc}' UNION ALL SELECT 'NdC' as 'Doc', T0.[DocNum], T0.[DocDate], T0.[DocDueDate], T0.[CardCode], T0.[CardName], T0.[DocTotal], (T0.DocTotal-T0.PaidToDate)*-1 as 'Saldo' FROM ORIN T0 WHERE T0.DocStatus = 'O' AND T0.CardCode = '{rfc}' UNION ALL SELECT 'Ant' as 'Doc', T0.[DocNum], T0.[DocDate], T0.[DocDueDate], T0.[CardCode], T0.[CardName], T0.[DocTotal],  T0.DocTotal-T0.PaidToDate as 'Saldo' FROM ODPI T0 WHERE T0.DocStatus = 'O' AND T0.CardCode = '{rfc}'".format(rfc=rfc[0][0])
         cur.execute(querystring)
         listaEstados = cur.fetchall()
-        
+
         estados = []
-        
-        
+
+
         for estado in listaEstados:
             estados.append({"DocNum":estado[1],"DocDate":estado[2], "CardCode":estado[4], "CardName":estado[5],"DocTotal":estado[6], "Saldo":estado[7]})
 
         context["estados"] = estados
+
         cur.close()
-        
+
+            
     except:
         print "Error de Conexion"
+        
     
     return render(request, "estadocuenta.html", context)
 

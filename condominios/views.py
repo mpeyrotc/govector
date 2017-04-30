@@ -1,6 +1,9 @@
 # coding=utf-8
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
+from django.contrib.auth import login as auth_login, authenticate
+from django.contrib.auth.decorators import login_required
 import os
 import json
 import psycopg2
@@ -279,7 +282,12 @@ def login(request):
         context["form"] = form
 
         if form.is_valid():
-            return redirect(reverse("estado"))
+            if User.objects.get(username__exact=form.cleaned_data['username']):
+                new_user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
+                
+
+                auth_login(request, new_user)
+                return redirect(reverse("estado"))
         
         form = LoginForm(initial = data)
         context["form"] = form
@@ -293,7 +301,7 @@ def login(request):
         return render(request, "login.html", context)
     
     
-
+@login_required
 def estado(request):
     context = {}
     rfc = 'ZIA070424NX9'

@@ -26,7 +26,7 @@ class LoginForm(forms.Form):
 
             cur = cnxn.cursor()
 
-            querystring = "SELECT Username, Password FROM Usuarios WHERE Username = '{username}' AND Password = '{password}'".format(username=username, password=password)
+            querystring = "SELECT Username, Password, RFC FROM Usuarios WHERE Username = '{username}' AND Password = '{password}'".format(username=username, password=password)
             
             cur.execute(querystring)
             

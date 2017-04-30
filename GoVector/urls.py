@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 import condominios.views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -35,6 +36,7 @@ urlpatterns = [
     url(r'^miembros/$', condominios.views.login, name='login'),
     url(r'^miembros/login$', condominios.views.login, name='login'),
     url(r'^miembros/estado$', condominios.views.estado, name='estado'),
+    url(r'^logout$', auth_views.logout_then_login, name='logout'),
     url(r'^informacion/reglamentos/condominios-administracion$', condominios.views.regconadm, name='regconadm'),
     url(r'^informacion/reglamentos/estacionamiento$', condominios.views.regest, name='regest'),
     url(r'^informacion/guia-general/directorio-cintermex$', condominios.views.dircintermex, name='dircintermex'),
